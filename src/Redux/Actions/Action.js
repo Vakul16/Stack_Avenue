@@ -1,5 +1,6 @@
 export const Action = (names) => {
-    return {
+  console.log(names)
+      return {
       type: "UPLOAD_NAMES",
       payload: names
     };

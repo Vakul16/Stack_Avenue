@@ -33,7 +33,9 @@ class App extends React.Component {
         key:''
       }
     })
+    // console.log(this.items)
     }
+    // console.log(this.items)
   }
   handleInput(e){
     this.setState({
@@ -42,6 +44,7 @@ class App extends React.Component {
         key: Date.now()
       }
     })
+    // console.log(this.items)
   }
  render(){
   //  console.log(this.props.history);
@@ -53,32 +56,16 @@ class App extends React.Component {
           <button type="submit">Add</button>
         </form>
         <p>{this.state.items.text}</p>
-          <Count items={this.state.items}/>      
+          <Count items={this.state.items}/>   
       </header>
-      <Router>
-        <Switch> 
-        <Route path = "/categories" component = {Categories} />
+      {/* <Router>
+        <Switch>  */}
+        {/* <Route exact path = "/categories" component = {Categories} /> */}
         {/* <Route exact path = "/" component = {Home} /> */}
-        </Switch>
-        </Router>
+        {/* </Switch>
+        </Router> */}
     </div>
   );
  }
 }
-
-// const Home = (props) => (
-//   <div>
-//   <button
-// onClick={() => {
-//   props.Action(this.state.items)
-//     auth.login(() => {
-//     props.history.push("/categories");
-//     console.log(props.history)
-//   });
-// }}>
-//   Go To Count</button>
-//   </div>
-// )
-
 export default App;
-// export default connect(null, { Action })(App);
