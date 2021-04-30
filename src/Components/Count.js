@@ -1,12 +1,7 @@
-// import React from 'react';
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route,  } from "react-router-dom";
-import Categories from "../Components/Categories"
-// import App from "../App"
-// import auth from '../Components/SignIn/auth'
-// import { BrowserRouter as Router, Switch, Route,  } from "react-router-dom";
-// export const MContext = React.createContext();  //exporting context object
+import StringCount from "./StringCount"
 import { connect } from "react-redux";
 import { Action } from "../Redux/Actions/Action"; 
 const mapDispatchToProps = dispatch => ({
@@ -14,13 +9,6 @@ const mapDispatchToProps = dispatch => ({
 }) 
 // connect(null, mapDispatchToProps);
 class Count extends Component {
-    // constructor(props) {
-    //     super(props)
-    
-        // this.state = {
-             
-        // }
-    // }
     clickHandler = () =>{
         this.props.insertData(this.props.items);
         // history.push("/categories");
@@ -43,16 +31,14 @@ class Count extends Component {
   <div>
       {listItems}
       <Router>
-      <Link to= "/categories" 
+      <Link to= "/stringcount" 
       className = "menu-link">
-      <button onClick = {this.clickHandler}>GO TO COUNT</button>
+      <button onClick = {this.clickHandler}>SUBMIT</button>
         </Link>
         <Switch>
-            {/* <Route exact path = "/" component = {App} /> */}
-            <Route exact path = "/categories" component = {Categories} />
+            <Route exact path = "/stringcount" component = {StringCount} />
         </Switch>
       </Router>
-      {/* {listItems} */}
   </div>
   )
     }
